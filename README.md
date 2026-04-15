@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📝 Lista de Tarefas - Next.js 15 & Testes Unitários
 
-## Getting Started
+[cite_start]Este projeto é uma aplicação de gerenciamento de tarefas desenvolvida para praticar a implementação de **testes unitários** em um ambiente **Next.js 15 (App Router)** utilizando **TypeScript**[cite: 3, 13]. [cite_start]O desafio foca em componentes reutilizáveis, Server Components e hooks personalizados[cite: 4].
 
-First, run the development server:
+## 🚀 Tecnologias Utilizadas
+
+* [cite_start]**Framework:** Next.js 15 (App Router) [cite: 13]
+* [cite_start]**Linguagem:** TypeScript [cite: 13]
+* [cite_start]**Testes:** Jest & React Testing Library [cite: 27]
+* **Estilização:** CSS Modules (`.module.css`)
+
+## ✨ Funcionalidades
+
+* [cite_start]**Listagem de Tarefas:** Exibição de uma lista vinda de um arquivo simulado (API mockada)[cite: 6, 7].
+* [cite_start]**Adição de Tarefas:** Inclusão de novas tarefas via formulário controlado (Client Component)[cite: 8, 15].
+* **Exclusão de Tarefas:** Remoção dinâmica de itens da lista.
+* [cite_start]**Contador em Tempo Real:** Uso de um **hook personalizado** (`useContadorDeTarefas`) para retornar a quantidade atual de tarefas[cite: 9, 16].
+
+## 📁 Estrutura do Projeto
+
+[cite_start]A organização segue a estrutura recomendada para componentes, hooks e testes[cite: 26]:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+├── app/
+│   └── page.tsx                 # Server Component que carrega a lista inicial [cite: 14]
+├── components/
+│   ├── GerenciadorTarefas.tsx   # Client Component de gerenciamento de estado
+│   ├── GerenciadorTarefas.module.css # Estilos isolados (CSS Modules)
+│   ├── NovaTarefa.tsx           # Componente para adicionar tarefas [cite: 15]
+│   └── NovaTarefa.module.css    # Estilos isolados (CSS Modules)
+├── hooks/
+│   └── useContadorDeTarefas.ts  # Hook para contagem de tarefas [cite: 16]
+└── tests/
+    ├── GerenciadorTarefas.test.tsx  # Teste de renderização e exclusão [cite: 21]
+    ├── NovaTarefa.test.tsx          # Teste de input, botão e submissão [cite: 19]
+    └── useContadorDeTarefas.test.ts # Teste isolado do hook com renderHook [cite: 20]
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Instalação e Execução
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Siga os passos abaixo para rodar o projeto localmente:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Clone o repositório:**
+   \`\`\`bash
+   git clone https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git
+   \`\`\`
 
-## Learn More
+2. **Acesse a pasta do projeto:**
+   \`\`\`bash
+   cd SEU_REPOSITORIO
+   \`\`\`
 
-To learn more about Next.js, take a look at the following resources:
+3. **Instale as dependências:**
+   \`\`\`bash
+   npm install
+   \`\`\`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. **Inicie o servidor de desenvolvimento:**
+   \`\`\`bash
+   npm run dev
+   \`\`\`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+5. **Acesse no navegador:**
+   Abra \`http://localhost:3000\` para ver a aplicação rodando.
 
-## Deploy on Vercel
+## 🧪 Como Rodar os Testes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Este projeto possui uma suíte de testes unitários com foco em garantir a qualidade e a renderização correta dos fluxos principais.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Para rodar os testes uma única vez, utilize:
+\`\`\`bash
+npm run test
+\`\`\`
+
+Para rodar os testes em modo de observação (watch mode), utilize:
+\`\`\`bash
+npm run test:watch
+\`\`\`
+
+---
+*Projeto desenvolvido para a atividade do Módulo 26.*
