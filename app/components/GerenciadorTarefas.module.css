@@ -1,0 +1,54 @@
+.title {
+
+    padding: 2rem;
+    text-align: center;
+    font-size: 150%;
+    font-weight: bold;
+}
+
+.paragraph {
+
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.paragraphCounter {
+
+    font-size: 85%;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: darkgray;
+}
+
+.list {
+
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem;
+    list-style: circle;
+}
+
+.listItem {
+
+    font-style: oblique;
+    padding: 0.5rem;
+}
+
+.listButton {
+
+    background: #c26565;
+    border: 0.1rem solid #752323;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    color: #752323;
+
+}
+
+.listButton:hover {
+
+    background: #faa5a5;
+}
